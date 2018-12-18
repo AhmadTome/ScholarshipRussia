@@ -22,8 +22,6 @@
                             <div class="col-md-12">
 
                                 <div class="card">
-
-
                                     <!-- Personal Information -->
                                     <header class="card-header">
                                         <h2 class="float-right card-title mt-2" style="text-align: right;"> المعلومات
