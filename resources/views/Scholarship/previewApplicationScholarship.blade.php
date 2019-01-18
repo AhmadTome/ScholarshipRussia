@@ -2,12 +2,15 @@
 
 @section('content')
 
-    <div  ng-controller="previewScholarship" class="container">
+    <div  ng-controller="previewScholarship" class="container" >
+        <!--
         <div class="pull-right" style="margin-right: -50px;margin-top: -22px">
             @include('layouts.sidebar')
         </div>
+        -->
+
         <div class="row" dir="rtl">
-            <div class="col-md-8 col-md-offset-1">
+            <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="font-size: 18px;">
                         <span class="fa fa-plus-square" style="font-size:36px;">&nbsp;&nbsp;<span style="font-size: 22px;"> الطلبات المقدمة للمنح الدراسية</span></span>
@@ -56,7 +59,7 @@
         td td{padding:0;border:1px solid #000}
         .fixed-panel {
             min-height: 10px;
-            max-height: 700px;
+            max-height: 400px;
             overflow-y: scroll;
         }
 

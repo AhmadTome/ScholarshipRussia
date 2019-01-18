@@ -118,7 +118,7 @@
                                         <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
                                             <nav class="main_nav">
                                                 <ul>
-                                                    <li class="active"><a href="/">الصفحة الرئيسية</a></li>
+                                                    <li class="active"><a id="scholarship_link" href="#scholarship_div">الصفحة الرئيسية</a></li>
                                                     <li><a href="PreviewScholarship">المنح الدراسية</a></li>
                                                     <li><a id="ourinformation" href="#extibalish">معلومات عنا</a></li>
                                                     <li><a id="contactusbtn" href="#contactus">تواصل معنا</a></li>
@@ -144,7 +144,7 @@
 
 
 
-    <div class="intro">
+    <div class="intro" id="scholarship_div">
         <!-- News -->
         <div class="form-group row" dir="rtl" style="margin-top: -50px;">
             <label class="control-label col-sm-2 pull-right text-left" style="font-size: 25px;color: black">بحث :</label>
@@ -258,7 +258,7 @@
 <script>
     $(document).ready(function () {
 
-        $("#contactusbtn,#ourinformation").click(function (e) {
+        $("#contactusbtn,#ourinformation,#scholarship_link").click(function (e) {
             e.preventDefault();
             $('html, body').animate({
                 scrollTop: $($.attr(this, 'href')).offset().top

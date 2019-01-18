@@ -40,7 +40,7 @@
 
     <script src="{{ asset('js/myscript_Angularjs.js') }}"></script>
 
-    <div id="app">
+    <div id="app" style="height: 100%;">
         <nav class="navbar navbar-default navbar-static-top" style="opacity: 0.9">
             <div class="container">
                 <div class="navbar-header pull-right">
@@ -53,10 +53,23 @@
                         <span class="icon-bar"></span>
                     </button>
 
+                    <a class="navbar-brand" href="{{ url('/previewApplicationScholarship') }}">
+                        تصفح طلبات المنح
+                    </a>
+
+                    <a class="navbar-brand" href="{{ url('/EditAdverts') }}">
+                        تعديل إعلان
+                    </a>  <!-- Branding Image -->
+                    <a class="navbar-brand" href="{{ url('/addAdverts') }}">
+                        إضافة اعلان
+                    </a>
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
                         الصفحة الرئيسية
-                    </a>
+                    </a>  <!-- Branding Image -->
+                      <!-- Branding Image -->
+
+
 
                 </div>
 

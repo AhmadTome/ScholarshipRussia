@@ -3,11 +3,14 @@
 @section('content')
 
     <div class="container">
+
+        <!--
         <div class="pull-right" style="margin-right: -50px;margin-top: -22px">
             @include('layouts.sidebar')
         </div>
+        -->
         <div class="row" dir="rtl">
-            <div class="col-md-8 col-md-offset-1">
+            <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="font-size: 18px;">
                         <span class="fa fa-plus-square" style="font-size:36px;">&nbsp;&nbsp;<span style="font-size: 22px;"> اضافة اعلان جديد</span></span>

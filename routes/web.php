@@ -34,6 +34,9 @@ Route::get('/addAdverts', function (){
 
 Route::get('/EditAdverts', function (){
 
+    if(\Illuminate\Support\Facades\Auth::guest()){
+        return view('welcome');
+    }
     return view('Advertisments.EditAdvert');
 
 });
@@ -71,7 +74,9 @@ Route::get('/PreviewAppliedScholarship', function (){
 });
 
 Route::get('/previewApplicationScholarship', function (){
-
+    if(\Illuminate\Support\Facades\Auth::guest()){
+        return view('welcome');
+    }
     return view('Scholarship.previewApplicationScholarship');
 
 });

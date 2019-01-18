@@ -3,16 +3,19 @@
 @section('content')
 
     <div class="container" ng-controller="editAdvert">
+        <!--
         <div class="pull-right" style="margin-right: -50px;margin-top: -22px">
             @include('layouts.sidebar')
         </div>
-        <div class="row" dir="rtl">
-            <div class="col-md-8 col-md-offset-1">
+        -->
+
+        <div class="row" dir="rtl" >
+            <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading" style="font-size: 18px;">
                         <span class="material-icons">تعديل اعلان&nbsp;&nbsp;&#xe254;</span>
                     </div>
-                    <div class="panel-body" style="opacity: 0.95;">
+                    <div class="panel-body" style="opacity: 0.95; overflow-y: scroll; height: 70%">
                         <div class="BodyDiv col-lg-12 col-md-12 col-xs-12 col-sm-12" ng-show="successMessagebool">
                                 <div class="row">
                                     <div class="alert alert-success" dir="rtl">
