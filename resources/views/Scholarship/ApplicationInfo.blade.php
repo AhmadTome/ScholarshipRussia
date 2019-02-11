@@ -126,7 +126,7 @@
                                                 <ul>
                                                     <li class="active"><a href="/">الصفحة الرئيسية</a></li>
                                                     <li><a href="PreviewScholarship">المنح الدراسية</a></li>
-                                                    <li><a id="ourinformation" href="#extibalish">معلومات عنا</a></li>
+                                                    <li><a id="ourinformation" href="#extibalish">من نحن</a></li>
                                                     <li><a id="contactusbtn" href="#contactus">تواصل معنا</a></li>
 
                                                     <li><a href="/login">تسجيل الدخول</a></li>
@@ -497,23 +497,54 @@
             </div>
         </div>
         <div class="footer_extra">
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="footer_extra_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-start justify-content-center">
-                            <div class="footer_social">
-                                <div class="footer_social_title">Follow us on Social Media</div>
-                                <ul class="footer_social_list">
-                                    <li><a target="_blank"
-                                           href="https://www.facebook.com/AlistiqlalUniversity/"><i
-                                                    class="fa fa-facebook"></i></a></li>
-                                    <li><a><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                    <li>
-                                        <a href="https://www.linkedin.com/company/alistiqlaluniversity/about/"><i
-                                                    class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                </ul>
-                            </div>
+            <div class="footer_extra">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="footer_extra_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-start justify-content-center">
+                                <div class="footer_social">
+                                    <div class="footer_social_title">Follow us on Social Media</div>
+                                    <ul class="footer_social_list">
+                                        <li><a target="_blank" href="https://www.facebook.com/AlistiqlalUniversity/"><i
+                                                        class="fa fa-facebook"></i></a></li>
+                                        <li><a><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                        <li><a href="https://www.linkedin.com/company/alistiqlaluniversity/about/"><i
+                                                        class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="footer_extra_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-start justify-content-center">
+                                <div class="footer_social">
+                                    <div class="footer_social_title">Palestinian Universities</div>
+                                    <ul class="footer_social_list">
+                                        <li><a target="_blank" href="https://www.najah.edu/ar/"><i
+                                                        class=""></i><img src="../images/najah.png" width="100" height="100"></a></li>
+                                        <li><a target="_blank" href="https://www.aaup.edu/ar"><i
+                                                        class=""></i><img src="../images/arab.GIF" width="100" height="100"></a></li>
+
+                                    </ul>
+                                </div>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <div class="footer_social">
+                                    <div class="footer_social_title">Russian Universities</div>
+                                    <ul class="footer_social_list">
+                                        <li><a target="_blank" href="https://eduinrus.ru/en/"><i
+                                                        class=""></i><img src="../images/russia1.png" width="100" height="100"></a></li>
+                                        <li><a target="_blank" href="https://recas.ru/en/universities-of-russia/medical-universities/6-kuban-state-medical-university"><i
+                                                        class=""></i><img src="../images/russia2.png" width="100" height="100"></a></li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                 </div>
