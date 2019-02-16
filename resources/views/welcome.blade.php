@@ -8,7 +8,6 @@
     <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
-
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
@@ -70,7 +69,8 @@
     <!-- Home -->
 
     <div class="home">
-        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/index.jpg" data-speed="0.8"></div>
+        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/index.jpg"
+             data-speed="0.8"></div>
 
         <!-- Header -->
 
@@ -118,15 +118,23 @@
                                         <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
                                             <nav class="main_nav">
                                                 <ul>
-                                                    <li class="active"><a id="scholarship_link" href="#scholarship_div">الصفحة الرئيسية</a></li>
-                                                    <li><a href="PreviewScholarship">المنح الدراسية</a></li>
+                                                    <li class="active"><a id="scholarship_link" href="#scholarship_div">الصفحة
+                                                            الرئيسية</a></li>
+                                                    <li><a id="scholar" href="PreviewScholarship">المنح الدراسية</a></li>
                                                     <li><a id="ourinformation" href="#extibalish">من نحن</a></li>
-                                                    <li><a id="contactusbtn" href="#contactus">تواصل معنا</a></li>
+                                                    <li><a id="contactusbtn" href="#contactus"> تواصل معنا</a></li>
 
-                                                    <li><a href="/login">تسجيل الدخول</a></li>
+                                                    <li><a id="login" href="/login">تسجيل الدخول</a></li>
                                                 </ul>
-                                            </nav>
 
+                                            </nav>
+                                            <div class="col-sm-4 pull-left">
+                                                <select class="form-control" id="lang">
+                                                    <option selected disabled value="AR">اختر اللغة</option>
+                                                    <option value="AR">اللغة العربية</option>
+                                                    <option value="HR">اللغة الروسية</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -141,13 +149,11 @@
     </div>
 
 
-
-
-
     <div class="intro" id="scholarship_div">
         <!-- News -->
         <div class="form-group row" dir="rtl" style="margin-top: -50px;">
-            <label class="control-label col-sm-2 pull-right text-left" style="font-size: 25px;color: black">بحث :</label>
+            <label id="srch" class="control-label col-sm-2 pull-right text-left" style="font-size: 25px;color: black">بحث
+                :</label>
             <div class="col-sm-6 pull-right">
                 <input class="form-control" type="text" ng-model="searchText" name="searchText">
             </div>
@@ -156,11 +162,16 @@
 
             <!-- Intro Item -->
             <div ng-repeat="x in adverts | filter:searchText" class="intro_item">
-                <div class="intro_image"><img  data-id="<%x.advertisement_id%>" ng-click='Readmore($event)' width="100%" height="247"  src="<% x.advertisement_imagePath%>" alt=""></div>
+                <div class="intro_image"><img data-id="<%x.advertisement_id%>" ng-click='Readmore($event)' width="100%"
+                                              height="247" src="<% x.advertisement_imagePath%>" alt=""></div>
                 <div data-id="<%x.advertisement_id%>" ng-click='Readmore($event)' class="intro_body">
-                    <div ng-if="x.isScholarship == 'on'" class="pull-left"><img src="images/scholarship.png" width="50px" height="50px"></div>
-                    <div class="intro_title text-right" style="margin-right: 15px;"><a data-id="<%x.advertisement_id%>" ng-click='Readmore($event)'><%x.advertisement_title%></a></div>
-                    <div  class="intro_subtitle text-right" style="margin-right: 20px;"><%x.advertisement_Text | cut%></div>
+                    <div ng-if="x.isScholarship == 'on'" class="pull-left"><img src="images/scholarship.png"
+                                                                                width="50px" height="50px"></div>
+                    <div class="intro_title text-right" style="margin-right: 15px;"><a data-id="<%x.advertisement_id%>"
+                                                                                       ng-click='Readmore($event)'><%x.advertisement_title%></a>
+                    </div>
+                    <div class="intro_subtitle text-right" style="margin-right: 20px;"><%x.advertisement_Text | cut%>
+                    </div>
                 </div>
             </div>
 
@@ -201,7 +212,9 @@
                             </div>
                             <div class="footer_about_text">
                                 <p id="extibalish">
-                                <div id="logo_text" class="logo_text " style="margin: 15px;margin-top: 200px">Establishing</div>
+                                <div id="logo_text" class="logo_text " style="margin: 15px;margin-top: 200px">
+                                    Establishing
+                                </div>
                                 The university was founded in 1998 on Palestinian land under the name “The
                                 Palestinian Academy for Security Sciences”. His Excellency, President Mahmoud Abbas,
                                 opened it in 2007. It was turned into a university in 2011. It is the first and
@@ -250,9 +263,11 @@
                                 <div class="footer_social_title">Palestinian Universities</div>
                                 <ul class="footer_social_list">
                                     <li><a target="_blank" href="https://www.najah.edu/ar/"><i
-                                                    class=""></i><img src="../images/najah.png" width="100" height="100"></a></li>
+                                                    class=""></i><img src="../images/najah.png" width="100"
+                                                                      height="100"></a></li>
                                     <li><a target="_blank" href="https://www.aaup.edu/ar"><i
-                                                    class=""></i><img src="../images/arab.GIF" width="100" height="100"></a></li>
+                                                    class=""></i><img src="../images/arab.GIF" width="100" height="100"></a>
+                                    </li>
 
                                 </ul>
                             </div>
@@ -261,9 +276,12 @@
                                 <div class="footer_social_title">Russian Universities</div>
                                 <ul class="footer_social_list">
                                     <li><a target="_blank" href="https://eduinrus.ru/en/"><i
-                                                    class=""></i><img src="../images/russia1.png" width="100" height="100"></a></li>
-                                    <li><a target="_blank" href="https://recas.ru/en/universities-of-russia/medical-universities/6-kuban-state-medical-university"><i
-                                                    class=""></i><img src="../images/russia2.png" width="100" height="100"></a></li>
+                                                    class=""></i><img src="../images/russia1.png" width="100"
+                                                                      height="100"></a></li>
+                                    <li><a target="_blank"
+                                           href="https://recas.ru/en/universities-of-russia/medical-universities/6-kuban-state-medical-university"><i
+                                                    class=""></i><img src="../images/russia2.png" width="100"
+                                                                      height="100"></a></li>
 
                                 </ul>
                             </div>
@@ -295,5 +313,31 @@
                 scrollTop: $($.attr(this, 'href')).offset().top
             }, 2000);
         });
+
+        $("#lang").on("change",function () {
+            var lang = $(this).val();
+            _t(lang);
+        })
+
+
+        function _t(lang) {
+
+            if(lang == 'HR'){
+                $('#scholarship_link').text('дома');
+                $('#scholar').text('Стипендии');
+                $('#ourinformation').text('Кто мы');
+                $('#contactusbtn').text('Свяжитесь с нами');
+                $('#login').text('Войти в систему');
+                $('#srch').text('поиск');
+            }else{
+                $('#scholarship_link').text('الصفحة الرئيسية');
+                $('#scholar').text('المنح الدراسية');
+                $('#ourinformation').text('من نحن');
+                $('#contactusbtn').text('تواصل معنا');
+                $('#login').text('تسجيل الدخول');
+                $('#srch').text('بحث');
+            }
+
+        }
     });
 </script>

@@ -118,15 +118,23 @@
                                         <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
                                             <nav class="main_nav">
                                                 <ul>
-                                                    <li class="active"><a href="/">الصفحة الرئيسية</a></li>
-                                                    <li><a id="scholarship_link" href="#scholarship_div">المنح الدراسية</a></li>
+                                                    <li class="active"><a id="scholarship_link" href="#scholarship_div">الصفحة
+                                                            الرئيسية</a></li>
+                                                    <li><a id="scholar" href="PreviewScholarship">المنح الدراسية</a></li>
                                                     <li><a id="ourinformation" href="#extibalish">من نحن</a></li>
-                                                    <li><a id="contactusbtn" href="#contactus">تواصل معنا</a></li>
+                                                    <li><a id="contactusbtn" href="#contactus"> تواصل معنا</a></li>
 
-                                                    <li><a href="/login">تسجيل الدخول</a></li>
+                                                    <li><a id="login" href="/login">تسجيل الدخول</a></li>
                                                 </ul>
-                                            </nav>
 
+                                            </nav>
+                                            <div class="col-sm-4 pull-left">
+                                                <select class="form-control" id="lang">
+                                                    <option selected disabled value="AR">اختر اللغة</option>
+                                                    <option value="AR">اللغة العربية</option>
+                                                    <option value="HR">اللغة الروسية</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -147,7 +155,7 @@
     <div  class="intro" id="scholarship_div">
         <!-- News -->
         <div class="form-group row" dir="rtl" style="margin-top: -50px;">
-            <label class="control-label col-sm-2 pull-right text-left" style="font-size: 25px;color: black">بحث :</label>
+            <label id="srch" class="control-label col-sm-2 pull-right text-left" style="font-size: 25px;color: black">بحث :</label>
             <div class="col-sm-6 pull-right">
                 <input class="form-control" type="text" ng-model="searchText" name="searchText">
             </div>
@@ -295,5 +303,31 @@
                 scrollTop: $($.attr(this, 'href')).offset().top
             }, 2000);
         });
+
+        $("#lang").on("change",function () {
+            var lang = $(this).val();
+            _t(lang);
+        })
+
+
+        function _t(lang) {
+
+            if(lang == 'HR'){
+                $('#scholarship_link').text('дома');
+                $('#scholar').text('Стипендии');
+                $('#ourinformation').text('Кто мы');
+                $('#contactusbtn').text('Свяжитесь с нами');
+                $('#login').text('Войти в систему');
+                $('#srch').text('поиск');
+            }else{
+                $('#scholarship_link').text('الصفحة الرئيسية');
+                $('#scholar').text('المنح الدراسية');
+                $('#ourinformation').text('من نحن');
+                $('#contactusbtn').text('تواصل معنا');
+                $('#login').text('تسجيل الدخول');
+                $('#srch').text('بحث');
+            }
+
+        }
     });
 </script>
