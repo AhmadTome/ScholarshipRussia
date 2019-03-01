@@ -119,28 +119,28 @@
                                         <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
                                             <nav class="main_nav">
                                                 <ul>
-                                                    <li class="active"><a id="scholarship_link" href="#scholarship_div">الصفحة
+                                                    <li ><a id="scholarship_link" href="#scholarship_div">الصفحة
                                                             الرئيسية</a></li>
                                                     <li><a id="scholar" href="PreviewScholarship">المنح الدراسية</a></li>
                                                     <li><a id="ourinformation" href="#extibalish">من نحن</a></li>
                                                     <li><a id="contactusbtn" href="#contactus"> تواصل معنا</a></li>
 
-                                                    <li><a id="login" href="/university">الجامعات</a></li>
+                                                    <li class="active"><a id="login" href="/university">الجامعات</a></li>
                                                     <li><a id="login" href="/previewImg">الصور</a></li>
                                                     <li><a id="login" href="/PreviewActivity">الانشطة والفعاليات</a></li>
                                                     <li><a id="login" href="/login">تسجيل الدخول</a></li>
                                                 </ul>
 
                                             </nav>
-<!--
-                                            <div class="col-sm-1.5 pull-left">
-                                                <select class="form-control" id="activity">
-                                                    <option selected disabled value="AR">الانشطة</option>
-                                                    <option value="H">الانشطة لهذا الموقع</option>
-                                                    <option value="A">الانشطة من الموقع الرسمي</option>
-                                                </select>
-                                            </div>
--->
+                                            <!--
+                                                                                        <div class="col-sm-1.5 pull-left">
+                                                                                            <select class="form-control" id="activity">
+                                                                                                <option selected disabled value="AR">الانشطة</option>
+                                                                                                <option value="H">الانشطة لهذا الموقع</option>
+                                                                                                <option value="A">الانشطة من الموقع الرسمي</option>
+                                                                                            </select>
+                                                                                        </div>
+                                            -->
                                             <div class="col-sm-1.5 pull-left">
                                                 <select class="form-control" id="advert">
                                                     <option selected disabled value="AR">الاخبار</option>
@@ -171,32 +171,52 @@
 
 
     <div class="intro" id="scholarship_div">
-        <!-- News -->
-        <div class="form-group row" dir="rtl" style="margin-top: -50px;">
-            <label id="srch" class="control-label col-sm-2 pull-right text-left" style="font-size: 25px;color: black">بحث
-                :</label>
-            <div class="col-sm-6 pull-right">
-                <input class="form-control" type="text" ng-model="searchText" name="searchText">
-            </div>
-        </div>
-        <div class="intro_content d-flex flex-row flex-wrap align-items-start justify-content-between" dir="rtl">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="footer_extra_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-start justify-content-center">
+                        <div class="footer_social">
+                            <div class="footer_social_title">Palestinian Universities</div>
+                            <ul class="footer_social_list">
+                                <li><a target="_blank" href="https://www.najah.edu/ar/"><i
+                                                class=""></i><img src="../images/najah.png" width="100"
+                                                                  height="100"></a></li>
+                                <li><a target="_blank" href="https://www.aaup.edu/ar"><i
+                                                class=""></i><img src="../images/arab.GIF" width="100" height="100"></a>
+                                </li>
+                                <li><a target="_blank" href="https://www.ptuk.edu.ps/"><i
+                                                class=""></i><img src="../images/kadoorei.png" width="100" height="100"></a>
+                                </li>
 
-            <!-- Intro Item -->
-            <div ng-repeat="x in adverts | filter:searchText" class="intro_item">
-                <div class="intro_image"><img data-id="<%x.advertisement_id%>" ng-click='Readmore($event)' width="100%"
-                                              height="247" src="<% x.advertisement_imagePath%>" alt=""></div>
-                <div data-id="<%x.advertisement_id%>" ng-click='Readmore($event)' class="intro_body">
-                    <div ng-if="x.isScholarship == 'on'" class="pull-left"><img src="images/scholarship.png"
-                                                                                width="50px" height="50px"></div>
-                    <div class="intro_title text-right" style="margin-right: 15px;"><a data-id="<%x.advertisement_id%>"
-                                                                                       ng-click='Readmore($event)'><%x.advertisement_title%></a>
-                    </div>
-                    <div class="intro_subtitle text-right" style="margin-right: 20px;"><%x.advertisement_Text | cut%>
+                                <li><a target="_blank" href="https://www.birzeit.edu/"><i
+                                                class=""></i><img src="../images/berzit.png" width="100" height="100"></a>
+                                </li>
+                                <li><a target="_blank" href="https://alistiqlal.edu.ps/index-ar.html"><i
+                                                class=""></i><img src="../images/logo.jpg" width="100" height="100"></a>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="footer_social">
+                            <div class="footer_social_title">Russian Universities</div>
+                            <ul class="footer_social_list">
+                                <li><a target="_blank" href="https://eduinrus.ru/en/"><i
+                                                class=""></i><img src="../images/russia1.png" width="100"
+                                                                  height="100"></a></li>
+                                <li><a target="_blank"
+                                       href="https://recas.ru/en/universities-of-russia/medical-universities/6-kuban-state-medical-university"><i
+                                                class=""></i><img src="../images/russia2.png" width="100"
+                                                                  height="100"></a></li>
+
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
 
@@ -315,16 +335,7 @@
             }
         })
 
-        /*
-        $("#activity").on("change",function () {
-            var lang = $(this).val();
-            if(lang == "A"){
-                window.location='http://pse.rs.gov.ru/ar/activities';
-            }else{
-                window.location='/PreviewActivity';
-            }
-        })
-        */
+
 
         function _t(lang) {
 

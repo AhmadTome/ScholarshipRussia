@@ -53,6 +53,10 @@
                         <span class="icon-bar"></span>
                     </button>
 
+                    <a class="navbar-brand" href="{{ url('/addimg') }}">
+                        ادخال صور
+                    </a>
+
                     <a class="navbar-brand" href="{{ url('/previewApplicationScholarship') }}">
                         تصفح طلبات المنح
                     </a>

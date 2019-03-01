@@ -33,7 +33,7 @@
                 <div class="menu_close"></div>
             </div>
             <div class="logo menu_logo">
-                <a href="#">
+                <a href="/">
                     <div class="logo_container d-flex flex-row align-items-start justify-content-start">
                         <div class="logo_image">
                             <div><img src="images/logo.png" alt=""></div>
@@ -82,7 +82,7 @@
                             <div class="col">
                                 <div class="header_top_content d-flex flex-row align-items-center justify-content-start">
                                     <div>
-                                        <a href="#">
+                                        <a href="/">
                                             <div class="logo_container d-flex flex-row align-items-start justify-content-start">
                                                 <div class="logo_image">
                                                     <div><img src="images/logo.jpg" alt=""></div>
@@ -98,8 +98,9 @@
                                     </div>
 
                                     <div class="header_social ml-auto">
-                                        <div id="logo_text" class="logo_text logo_text_not_ie">جامعة الاستقلال</div>
-                                        <div class="logo_sub text-right">قصر هشام شارع أريحا</div>
+                                        <div id="logo_text" class="logo_text logo_text_not_ie">المركز الروسي</div>
+                                        <div class="logo_sub text-right">مركز الشاعر سيرجيه يسينين</div>
+                                        <div class="logo_sub text-right">للغة والثقافة الروسية</div>
                                     </div>
                                     <div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
                                 </div>
@@ -118,19 +119,39 @@
                                         <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
                                             <nav class="main_nav">
                                                 <ul>
-                                                    <li class="active"><a id="scholarship_link" href="#scholarship_div">الصفحة
+                                                    <li ><a id="scholarship_link" href="#scholarship_div">الصفحة
                                                             الرئيسية</a></li>
-                                                    <li><a id="scholar" href="PreviewScholarship">المنح الدراسية</a></li>
+                                                    <li ><a id="scholar" href="PreviewScholarship">المنح الدراسية</a></li>
                                                     <li><a id="ourinformation" href="#extibalish">من نحن</a></li>
                                                     <li><a id="contactusbtn" href="#contactus"> تواصل معنا</a></li>
 
+                                                    <li><a id="login" href="/university">الجامعات</a></li>
+                                                    <li><a id="login" href="/previewImg">الصور</a></li>
+                                                    <li><a id="login" href="/PreviewActivity">الانشطة والفعاليات</a></li>
                                                     <li><a id="login" href="/login">تسجيل الدخول</a></li>
                                                 </ul>
 
                                             </nav>
-                                            <div class="col-sm-4 pull-left">
+                                            <!--
+                                                                                        <div class="col-sm-1.5 pull-left">
+                                                                                            <select class="form-control" id="activity">
+                                                                                                <option selected disabled value="AR">الانشطة</option>
+                                                                                                <option value="H">الانشطة لهذا الموقع</option>
+                                                                                                <option value="A">الانشطة من الموقع الرسمي</option>
+                                                                                            </select>
+                                                                                        </div>
+                                            -->
+                                            <div class="col-sm-1.5 pull-left">
+                                                <select class="form-control" id="advert">
+                                                    <option selected disabled value="AR">الاخبار</option>
+                                                    <option value="H">اخبار الموقع</option>
+                                                    <option value="A">اخبار الجامعة</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="col-sm-1.5 pull-left">
                                                 <select class="form-control" id="lang">
-                                                    <option selected disabled value="AR">اختر اللغة</option>
+                                                    <option selected disabled value="AR">اللغة</option>
                                                     <option value="AR">اللغة العربية</option>
                                                     <option value="HR">اللغة الروسية</option>
                                                 </select>
@@ -250,36 +271,6 @@
                 </div>
             </div>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <div class="footer_extra_content d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-lg-start justify-content-center">
-                            <div class="footer_social">
-                                <div class="footer_social_title">Palestinian Universities</div>
-                                <ul class="footer_social_list">
-                                    <li><a target="_blank" href="https://www.najah.edu/ar/"><i
-                                                    class=""></i><img src="../images/najah.png" width="100" height="100"></a></li>
-                                    <li><a target="_blank" href="https://www.aaup.edu/ar"><i
-                                                    class=""></i><img src="../images/arab.GIF" width="100" height="100"></a></li>
-
-                                </ul>
-                            </div>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <div class="footer_social">
-                                <div class="footer_social_title">Russian Universities</div>
-                                <ul class="footer_social_list">
-                                    <li><a target="_blank" href="https://eduinrus.ru/en/"><i
-                                                    class=""></i><img src="../images/russia1.png" width="100" height="100"></a></li>
-                                    <li><a target="_blank" href="https://recas.ru/en/universities-of-russia/medical-universities/6-kuban-state-medical-university"><i
-                                                    class=""></i><img src="../images/russia2.png" width="100" height="100"></a></li>
-
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
     </footer>
 
@@ -307,6 +298,14 @@
         $("#lang").on("change",function () {
             var lang = $(this).val();
             _t(lang);
+        });
+        $("#advert").on("change",function () {
+            var lang = $(this).val();
+            if(lang == "A"){
+                window.location='https://alistiqlal.edu.ps/search-ar.html';
+            }else{
+                window.location='/PreviewAdvert';
+            }
         })
 
 

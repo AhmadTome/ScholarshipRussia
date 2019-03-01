@@ -66,6 +66,13 @@
                                 <span class="slider round"></span>
                             </label>
                         </div>
+                        <div class="form-group">
+                            <label for="adv_scholarship">هل هذا الاعلان يعبر عن نشاط للمركز الروسي :</label>
+
+                                <input type="checkbox" name="isactivity" >
+
+
+                        </div>
 
                         <div class="form-group pull-left col-sm-offset-1">
                             <button type="submit" ng-disabled="myform.adv_title.$invalid || myform.adv_text.$invalid" type="button" class="btn btn-primary">اضافة الاعلان</button>

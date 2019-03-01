@@ -8,6 +8,7 @@
     <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
+
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
     <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
@@ -69,8 +70,7 @@
     <!-- Home -->
 
     <div class="home">
-        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/cover.jpg"
-             data-speed="0.8"></div>
+        <div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="images/cover.jpg" data-speed="0.8"></div>
 
         <!-- Header -->
 
@@ -132,16 +132,16 @@
                                                 </ul>
 
                                             </nav>
-<!--
-                                            <div class="col-sm-1.5 pull-left">
-                                                <select class="form-control" id="activity">
-                                                    <option selected disabled value="AR">الانشطة</option>
-                                                    <option value="H">الانشطة لهذا الموقع</option>
-                                                    <option value="A">الانشطة من الموقع الرسمي</option>
-                                                </select>
-                                            </div>
--->
-                                            <div class="col-sm-1.5 pull-left">
+                                            <!--
+                                                                                        <div class="col-sm-1.5 pull-left">
+                                                                                            <select class="form-control" id="activity">
+                                                                                                <option selected disabled value="AR">الانشطة</option>
+                                                                                                <option value="H">الانشطة لهذا الموقع</option>
+                                                                                                <option value="A">الانشطة من الموقع الرسمي</option>
+                                                                                            </select>
+                                                                                        </div>
+                                            -->
+                                            <div class="col-sm-1.5 pull-left" >
                                                 <select class="form-control" id="advert">
                                                     <option selected disabled value="AR">الاخبار</option>
                                                     <option value="H">اخبار الموقع</option>
@@ -170,29 +170,26 @@
     </div>
 
 
-    <div class="intro" id="scholarship_div">
+
+
+
+    <div  class="intro" id="scholarship_div">
         <!-- News -->
         <div class="form-group row" dir="rtl" style="margin-top: -50px;">
-            <label id="srch" class="control-label col-sm-2 pull-right text-left" style="font-size: 25px;color: black">بحث
-                :</label>
+            <label id="srch" class="control-label col-sm-2 pull-right text-left" style="font-size: 25px;color: black">بحث :</label>
             <div class="col-sm-6 pull-right">
                 <input class="form-control" type="text" ng-model="searchText" name="searchText">
             </div>
         </div>
-        <div class="intro_content d-flex flex-row flex-wrap align-items-start justify-content-between" dir="rtl">
+        <div  class="intro_content d-flex flex-row flex-wrap align-items-start justify-content-between" dir="rtl">
 
             <!-- Intro Item -->
-            <div ng-repeat="x in adverts | filter:searchText" class="intro_item">
-                <div class="intro_image"><img data-id="<%x.advertisement_id%>" ng-click='Readmore($event)' width="100%"
-                                              height="247" src="<% x.advertisement_imagePath%>" alt=""></div>
+            <div  ng-repeat="x in adverts | filter:searchText" class="intro_item pull-right" ng-if="x.isScholarship == 'off'">
+                <div class="intro_image"><img  data-id="<%x.advertisement_id%>" ng-click='Readmore($event)' width="100%" height="247"  src="<% x.advertisement_imagePath%>" alt=""></div>
                 <div data-id="<%x.advertisement_id%>" ng-click='Readmore($event)' class="intro_body">
-                    <div ng-if="x.isScholarship == 'on'" class="pull-left"><img src="images/scholarship.png"
-                                                                                width="50px" height="50px"></div>
-                    <div class="intro_title text-right" style="margin-right: 15px;"><a data-id="<%x.advertisement_id%>"
-                                                                                       ng-click='Readmore($event)'><%x.advertisement_title%></a>
-                    </div>
-                    <div class="intro_subtitle text-right" style="margin-right: 20px;"><%x.advertisement_Text | cut%>
-                    </div>
+                    <div ng-if="x.isScholarship == 'on'" class="pull-left"><img src="images/scholarship.png" width="50px" height="50px"></div>
+                    <div class="intro_title text-right" style="margin-right: 15px;"><a data-id="<%x.advertisement_id%>" ng-click='Readmore($event)'><%x.advertisement_title%></a></div>
+                    <div  class="intro_subtitle text-right" style="margin-right: 20px;"><%x.advertisement_Text | cut%></div>
                 </div>
             </div>
 
@@ -233,9 +230,7 @@
                             </div>
                             <div class="footer_about_text">
                                 <p id="extibalish">
-                                <div id="logo_text" class="logo_text " style="margin: 15px;margin-top: 200px">
-                                    Establishing
-                                </div>
+                                <div id="logo_text" class="logo_text " style="margin: 15px;margin-top: 200px">Establishing</div>
                                 The university was founded in 1998 on Palestinian land under the name “The
                                 Palestinian Academy for Security Sciences”. His Excellency, President Mahmoud Abbas,
                                 opened it in 2007. It was turned into a university in 2011. It is the first and
@@ -315,16 +310,6 @@
             }
         })
 
-        /*
-        $("#activity").on("change",function () {
-            var lang = $(this).val();
-            if(lang == "A"){
-                window.location='http://pse.rs.gov.ru/ar/activities';
-            }else{
-                window.location='/PreviewActivity';
-            }
-        })
-        */
 
         function _t(lang) {
 

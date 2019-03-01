@@ -119,28 +119,28 @@
                                         <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
                                             <nav class="main_nav">
                                                 <ul>
-                                                    <li class="active"><a id="scholarship_link" href="#scholarship_div">الصفحة
+                                                    <li><a id="scholarship_link" href="#scholarship_div">الصفحة
                                                             الرئيسية</a></li>
                                                     <li><a id="scholar" href="PreviewScholarship">المنح الدراسية</a></li>
                                                     <li><a id="ourinformation" href="#extibalish">من نحن</a></li>
                                                     <li><a id="contactusbtn" href="#contactus"> تواصل معنا</a></li>
 
                                                     <li><a id="login" href="/university">الجامعات</a></li>
-                                                    <li><a id="login" href="/previewImg">الصور</a></li>
+                                                    <li class="active"><a id="login" href="/previewImg">الصور</a></li>
                                                     <li><a id="login" href="/PreviewActivity">الانشطة والفعاليات</a></li>
                                                     <li><a id="login" href="/login">تسجيل الدخول</a></li>
                                                 </ul>
 
                                             </nav>
-<!--
-                                            <div class="col-sm-1.5 pull-left">
-                                                <select class="form-control" id="activity">
-                                                    <option selected disabled value="AR">الانشطة</option>
-                                                    <option value="H">الانشطة لهذا الموقع</option>
-                                                    <option value="A">الانشطة من الموقع الرسمي</option>
-                                                </select>
-                                            </div>
--->
+                                            <!--
+                                                                                        <div class="col-sm-1.5 pull-left">
+                                                                                            <select class="form-control" id="activity">
+                                                                                                <option selected disabled value="AR">الانشطة</option>
+                                                                                                <option value="H">الانشطة لهذا الموقع</option>
+                                                                                                <option value="A">الانشطة من الموقع الرسمي</option>
+                                                                                            </select>
+                                                                                        </div>
+                                            -->
                                             <div class="col-sm-1.5 pull-left">
                                                 <select class="form-control" id="advert">
                                                     <option selected disabled value="AR">الاخبار</option>
@@ -171,31 +171,20 @@
 
 
     <div class="intro" id="scholarship_div">
-        <!-- News -->
-        <div class="form-group row" dir="rtl" style="margin-top: -50px;">
-            <label id="srch" class="control-label col-sm-2 pull-right text-left" style="font-size: 25px;color: black">بحث
-                :</label>
-            <div class="col-sm-6 pull-right">
-                <input class="form-control" type="text" ng-model="searchText" name="searchText">
-            </div>
+        <div class="form-group row" dir="rtl">
+            <h3 class="control-label col-sm-3 pull-right text-left" > العنوان :</h3>
+        <div class="col-sm-8 pull-right text-left">
+            <select class="form-control " id="person_select" name="person_select">
+                <option selected disabled>اختار العنوان</option>
+                @foreach($img as $item)
+                    <option value="{{$item->title}}">{{$item->title}}</option>
+
+                @endforeach
+            </select>
         </div>
-        <div class="intro_content d-flex flex-row flex-wrap align-items-start justify-content-between" dir="rtl">
+        </div>
 
-            <!-- Intro Item -->
-            <div ng-repeat="x in adverts | filter:searchText" class="intro_item">
-                <div class="intro_image"><img data-id="<%x.advertisement_id%>" ng-click='Readmore($event)' width="100%"
-                                              height="247" src="<% x.advertisement_imagePath%>" alt=""></div>
-                <div data-id="<%x.advertisement_id%>" ng-click='Readmore($event)' class="intro_body">
-                    <div ng-if="x.isScholarship == 'on'" class="pull-left"><img src="images/scholarship.png"
-                                                                                width="50px" height="50px"></div>
-                    <div class="intro_title text-right" style="margin-right: 15px;"><a data-id="<%x.advertisement_id%>"
-                                                                                       ng-click='Readmore($event)'><%x.advertisement_title%></a>
-                    </div>
-                    <div class="intro_subtitle text-right" style="margin-right: 20px;"><%x.advertisement_Text | cut%>
-                    </div>
-                </div>
-            </div>
-
+        <div id="content">
 
         </div>
     </div>
@@ -291,8 +280,10 @@
 <script src="js/news.js"></script>
 </body>
 </html>
+
 <script>
     $(document).ready(function () {
+
 
         $("#contactusbtn,#ourinformation,#scholarship_link").click(function (e) {
             e.preventDefault();
@@ -313,18 +304,26 @@
             }else{
                 window.location='/PreviewAdvert';
             }
-        })
+        });
 
-        /*
-        $("#activity").on("change",function () {
+        $("#person_select").on("change",function () {
             var lang = $(this).val();
-            if(lang == "A"){
-                window.location='http://pse.rs.gov.ru/ar/activities';
-            }else{
-                window.location='/PreviewActivity';
-            }
-        })
-        */
+            $.ajax({
+                type: 'get',
+                url: '{!!URL::to('getimgs')!!}',
+                data: {'title': lang},
+                success: function (data) {
+                   $("#content").empty();
+                   for(var i = 0 ;i<data.length;i++){
+                       $("#content").prepend('<img width="350px;" height="300px;" src="'+ data[i].path +'">');
+                       $("#content").prepend('&nbsp;&nbsp;&nbsp;');
+                   }
+                }
+            });
+
+
+        });
+
 
         function _t(lang) {
 

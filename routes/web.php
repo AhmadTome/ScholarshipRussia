@@ -31,6 +31,10 @@ Route::get('/addAdverts', function (){
     return redirect()->to('/home');
 });
 
+Route::get('/addimg', function (){
+    return view('img');
+});
+
 
 Route::get('/EditAdverts', function (){
 
@@ -42,6 +46,7 @@ Route::get('/EditAdverts', function (){
 });
 
 Route::post('/addAdvert','adverts@store');
+Route::post('/addimg','adverts@addimg');
 Route::post('/editAdvert/{id}','adverts@edit');
 
 
@@ -65,6 +70,34 @@ Route::get('/PreviewScholarship', function (){
     return view('Scholarship.previewScholarship');
 
 });
+
+Route::get('/PreviewAdvert', function (){
+
+    return view('Scholarship.AdvertOnly');
+
+});
+
+Route::get('/PreviewActivity', function (){
+
+    return view('Scholarship.PreviewActivity');
+
+});
+
+
+Route::get('/previewImg', function (){
+    $img = \App\img::distinct()->get(['title']);
+    return view('previewImg')->with('img',$img);
+});
+Route::get('/getimgs', 'adverts@getimgs');
+
+
+Route::get('/university', function (){
+
+    return view('university');
+
+});
+
+
 
 
 Route::get('/PreviewAppliedScholarship', function (){

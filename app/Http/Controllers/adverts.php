@@ -6,6 +6,7 @@ use App\advertisment;
 use App\contact_info;
 use App\family_info;
 use App\high_school_info;
+use App\img;
 use App\language_info;
 use App\motivation_letter_info;
 use App\personal_info;
@@ -49,6 +50,10 @@ class adverts extends Controller
             $scholar_status = "off";
         } else {
             $scholar_status = "on";
+        }
+
+        if(Input::get('isactivity') == "on"){
+            $scholar_status = "activity";
         }
 
         if ($request->hasFile('adv_image')) {
@@ -295,5 +300,30 @@ on sp.sholarship_id = p.sholarship_id');
 
         return redirect()->back();
 
+    }
+
+    public function addimg(Request $request){
+        $imagcount=1;
+        if($request->hasFile('images')){
+            foreach($request->file('images') as $file) {
+                $ext=$file->getClientOriginalExtension();
+                $date=date('Ymd_His');
+                $imagename =time().'_'.$date.'_'.($imagcount++).'.'.$ext ;
+                $file->move(public_path().'/uploads', $imagename);
+                $user=new img;
+                $user->title=Input::get('adv_title');
+                $user->path='/uploads/'.$imagename;
+                if ($user->save()) {
+                    session()->flash("notif", "تم ادخال الصور بنجاح ");
+                } else {
+                    session()->flash("notif", "لم يتم ادخال الصور لحدوث خطأ في الادخال");
+                }
+            }
+        }
+        return redirect()->back();
+    }
+
+    public function getimgs(Request $request){
+        return img::where('title',$request->title)->get();
     }
 }
