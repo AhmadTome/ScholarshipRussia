@@ -148,7 +148,7 @@
                                                     <option value="A">اخبار الجامعة</option>
                                                 </select>
                                             </div>
-
+                                            <!--
                                             <div class="col-sm-1.5 pull-left">
                                                 <select class="form-control" id="lang">
                                                     <option selected disabled value="AR">اللغة</option>
@@ -156,6 +156,7 @@
                                                     <option value="HR">اللغة الروسية</option>
                                                 </select>
                                             </div>
+                                            -->
                                         </div>
                                     </div>
                                 </div>

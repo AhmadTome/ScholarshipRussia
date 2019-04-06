@@ -117,18 +117,18 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
-                                            <nav class="main_nav">
+                                            <nav class="main_nav" >
                                                 <ul>
-                                                    <li class="active"><a id="scholarship_link" href="#scholarship_div">الصفحة
+                                                    <li class="active"><a id="scholarship_link" href="#scholarship_div" style="font-size: 12px;" >الصفحة
                                                             الرئيسية</a></li>
-                                                    <li><a id="scholar" href="PreviewScholarship">المنح الدراسية</a></li>
-                                                    <li><a id="ourinformation" href="#extibalish">من نحن</a></li>
-                                                    <li><a id="contactusbtn" href="#contactus"> تواصل معنا</a></li>
+                                                    <li><a id="scholar" href="PreviewScholarship" style="font-size: 12px;">المنح الدراسية</a></li>
+                                                    <li><a id="ourinformation" href="#extibalish" style="font-size: 12px;">من نحن</a></li>
+                                                    <li><a id="contactusbtn" href="#contactus" style="font-size: 12px;"> تواصل معنا</a></li>
 
-                                                    <li><a id="login" href="/university">الجامعات</a></li>
-                                                    <li><a id="login" href="/previewImg">الصور</a></li>
-                                                    <li><a id="login" href="/PreviewActivity">الانشطة والفعاليات</a></li>
-                                                    <li><a id="login" href="/login">تسجيل الدخول</a></li>
+                                                    <li><a id="uni" href="/university" style="font-size: 12px;">الجامعات</a></li>
+                                                    <li><a id="img" href="/previewImg" style="font-size: 12px;">الصور</a></li>
+                                                    <li><a id="activities" href="/PreviewActivity" style="font-size: 12px;">الانشطة والفعاليات</a></li>
+                                                    <li><a id="login" href="/login" style="font-size: 12px;">تسجيل الدخول</a></li>
                                                 </ul>
 
                                             </nav>
@@ -141,7 +141,7 @@
                                                 </select>
                                             </div>
 -->
-                                            <div class="col-sm-1.5 pull-left">
+                                            <div class="col-lg-1.5 pull-left">
                                                 <select class="form-control" id="advert">
                                                     <option selected disabled value="AR">الاخبار</option>
                                                     <option value="H">اخبار الموقع</option>
@@ -149,13 +149,7 @@
                                                 </select>
                                             </div>
 
-                                            <div class="col-sm-1.5 pull-left">
-                                                <select class="form-control" id="lang">
-                                                    <option selected disabled value="AR">اللغة</option>
-                                                    <option value="AR">اللغة العربية</option>
-                                                    <option value="HR">اللغة الروسية</option>
-                                                </select>
-                                            </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -165,6 +159,7 @@
                     </div>
                 </div>
             </div>
+
         </header>
 
     </div>
@@ -178,7 +173,15 @@
             <div class="col-sm-6 pull-right">
                 <input class="form-control" type="text" ng-model="searchText" name="searchText">
             </div>
+            <div class="col-lg-1.5 pull-left">
+                <select class="form-control" id="lang">
+                    <option selected disabled value="AR">اللغة</option>
+                    <option value="AR">اللغة العربية</option>
+                    <option value="HR">اللغة الروسية</option>
+                </select>
+            </div>
         </div>
+
         <div class="intro_content d-flex flex-row flex-wrap align-items-start justify-content-between" dir="rtl">
 
             <!-- Intro Item -->
@@ -335,6 +338,10 @@
                 $('#contactusbtn').text('Свяжитесь с нами');
                 $('#login').text('Войти в систему');
                 $('#srch').text('поиск');
+                $('#activities').text('События и мероприятия');
+                $('#img').text('Фотографии');
+                $('#uni').text('Университеты');
+
             }else{
                 $('#scholarship_link').text('الصفحة الرئيسية');
                 $('#scholar').text('المنح الدراسية');
@@ -342,8 +349,11 @@
                 $('#contactusbtn').text('تواصل معنا');
                 $('#login').text('تسجيل الدخول');
                 $('#srch').text('بحث');
+                $('#activities').text('الفعاليات والأنشطة');
+                $('#img').text('الصور');
+                $('#uni').text('الجامعات');
             }
-
+php
         }
     });
 </script>
